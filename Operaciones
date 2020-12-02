@@ -1,0 +1,73 @@
+
+package u3e2;
+
+import java.util.Scanner;
+
+public class Operaciones {
+    String[ ]   PilaFake = new  String[31];
+    Scanner leer = new Scanner(System.in);
+    int contadorinicio=0;
+    int contadorfinal=0;
+    int con;
+     public void ingresar() {
+         System.out.println("Ingresa la cantidad de numeros que deseas ingresar");
+         con=leer.nextInt();
+         if (contadorfinal==0) {
+             contadorfinal=con;
+         }else {
+             contadorfinal= contadorfinal+con; 
+         }
+       //paraingresar();
+       for (int i=contadorinicio ; i < contadorfinal; i++) {
+             System.out.println("Ingresa el valor");  
+             PilaFake[i]=leer.next();
+         }  
+         contadorinicio=contadorfinal;
+        
+     }
+    
+      public void eleminar(){
+          if (contadorinicio==0) {
+              System.out.println("La Cola se Encuentra Vacia :( ");
+          }else{
+            int tama=PilaFake.length;
+          int el=0;
+          boolean salir=true;
+          //System.out.println(el);
+         // System.out.println("El tamaño "+tama);
+         do{
+           
+             if (PilaFake[el]!=" ") {
+                 PilaFake[el]=" ";
+                 salir=false;
+                 
+             }else{
+                 el++;
+                // System.out.println("Esta imprimiendo el "+el);
+                 if (el==contadorfinal) {
+                  System.out.println("La Cola se Encuentra Vacia :( ");
+                  salir=false;
+              }
+             }
+                                       
+         }while (salir);  
+          }
+           
+      }
+      public void mostrar(){
+          if (contadorfinal==0) {
+              System.out.println("La Cola se Encuentra Vacia :( ");
+          }else{
+              for (int i = 0; i < contadorfinal; i++) {
+              if (PilaFake[i]!=" ") {
+                  System.out.print(PilaFake[i]+" ");
+              }
+              if (i==contadorfinal-1&&PilaFake[i].equals(" ")) {
+                     System.out.print("La Cola se Encuentra Vacia :( ");
+                 }
+          }
+          System.out.println(" ");
+          }
+          
+      }
+}
