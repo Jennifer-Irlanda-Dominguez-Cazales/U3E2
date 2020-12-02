@@ -1,0 +1,48 @@
+
+package u3e2;
+import java.util.Scanner;
+public class U3E2 {
+    public static void main(String[] args) {
+        //Colas con Arreglos
+       Operaciones muestra = new Operaciones();
+        boolean continuar= true;
+          
+        int opcion; 
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Colas con Arreglos");
+        while(continuar){
+            System.out.println("Menu");
+            System.out.println("1.-Insertar");
+            System.out.println("2.-Eleminar");
+            System.out.println("3.-Mostrar\t");
+            System.out.println("4.-Salir");
+                      
+            opcion=leer.nextInt();
+             System.out.println("----------");
+            switch(opcion){
+                case 1:
+                    muestra.ingresar(); 
+                break; 
+                //
+                case 2:
+                     muestra.eleminar(); 
+                break;
+                //
+                case 3:
+                     muestra.mostrar(); 
+                break;
+                //
+                case 4:
+                    continuar=false;
+                break; 
+                default:
+                    System.out.println(opcion+" No es una opcion del menu ");
+                    break;
+                      
+                
+            }
+             System.out.println("----------");
+        }
+    }
+    
+}
